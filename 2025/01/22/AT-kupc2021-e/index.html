@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="AT_kupc2021_e题目大意给定一张无向连通图以及一颗生成树，要求给这张图的每条边赋权值，使得这颗生成树为最小生成树，且边权按照给定的顺序排列起来的字典序最小。 做法我们将其视作向树上加边，而每添加一条边就会出现一个环（只考虑树边），而这条边的权值应该比环上的边的权值（还没赋权的）都小。 e.g.  在这张图中，黑色和红色的边是树边，蓝色是要添加的边，红色表示已经确定了边权的边，黑色表示还没">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AT_kupc2021_e">
+<meta property="og:url" content="http://bijhla.github.io/2025/01/22/AT-kupc2021-e/index.html">
+<meta property="og:site_name" content="bijhla&#39;s blog">
+<meta property="og:description" content="AT_kupc2021_e题目大意给定一张无向连通图以及一颗生成树，要求给这张图的每条边赋权值，使得这颗生成树为最小生成树，且边权按照给定的顺序排列起来的字典序最小。 做法我们将其视作向树上加边，而每添加一条边就会出现一个环（只考虑树边），而这条边的权值应该比环上的边的权值（还没赋权的）都小。 e.g.  在这张图中，黑色和红色的边是树边，蓝色是要添加的边，红色表示已经确定了边权的边，黑色表示还没">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="l:\otherfiles\git\hexo\source_posts\p3t1nubh.png">
+<meta property="article:published_time" content="2025-01-22T05:12:01.000Z">
+<meta property="article:modified_time" content="2025-01-22T05:14:22.039Z">
+<meta property="article:author" content="bijhla">
+<meta property="article:tag" content="题解">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="l:\otherfiles\git\hexo\source_posts\p3t1nubh.png">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>AT_kupc2021_e</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="顶部" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/search/">搜索</a></li><!--
+     --><!--
+       --><li><a href="/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/archives/">归档</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/probberechts">项目</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="下一篇" href="/2025/01/22/%E5%9E%83%E5%9C%BENAS/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="分享文章" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://bijhla.github.io/2025/01/22/AT-kupc2021-e/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://bijhla.github.io/2025/01/22/AT-kupc2021-e/&text=AT_kupc2021_e"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://bijhla.github.io/2025/01/22/AT-kupc2021-e/&title=AT_kupc2021_e"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://bijhla.github.io/2025/01/22/AT-kupc2021-e/&is_video=false&description=AT_kupc2021_e"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=AT_kupc2021_e&body=Check out this article: http://bijhla.github.io/2025/01/22/AT-kupc2021-e/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://bijhla.github.io/2025/01/22/AT-kupc2021-e/&title=AT_kupc2021_e"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://bijhla.github.io/2025/01/22/AT-kupc2021-e/&title=AT_kupc2021_e"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://bijhla.github.io/2025/01/22/AT-kupc2021-e/&title=AT_kupc2021_e"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://bijhla.github.io/2025/01/22/AT-kupc2021-e/&title=AT_kupc2021_e"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://bijhla.github.io/2025/01/22/AT-kupc2021-e/&name=AT_kupc2021_e&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://bijhla.github.io/2025/01/22/AT-kupc2021-e/&t=AT_kupc2021_e"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#AT-kupc2021-e"><span class="toc-number">1.</span> <span class="toc-text">AT_kupc2021_e</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E5%A4%A7%E6%84%8F"><span class="toc-number">1.1.</span> <span class="toc-text">题目大意</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%81%9A%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">做法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%91%E5%89%96"><span class="toc-number">1.2.1.</span> <span class="toc-text">树剖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B6%E6%9F%A5%E9%9B%86"><span class="toc-number">1.2.2.</span> <span class="toc-text">并查集</span></a></li></ol></li></ol></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        AT_kupc2021_e
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">bijhla</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2025-01-22T05:12:01.000Z" class="dt-published" itemprop="datePublished">2025-01-22</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag">题解</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1 id="AT-kupc2021-e"><a href="#AT-kupc2021-e" class="headerlink" title="AT_kupc2021_e"></a>AT_kupc2021_e</h1><h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>给定一张<strong>无向连通图</strong>以及一颗<strong>生成树</strong>，要求给这张图的每条边赋权值，使得这颗生成树为<strong>最小生成树</strong>，且边权按照<strong>给定</strong>的顺序排列起来的<strong>字典序最小</strong>。</p>
+<h2 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h2><p>我们将其视作向树上加边，而每添加一条边就会出现一个环（只考虑树边），而这条边的权值应该比环上的边的权值（还没赋权的）都小。</p>
+<p>e.g.</p>
+<p><img src="L:\otherfiles\git\hexo\source_posts\p3t1nubh.png"></p>
+<p>在这张图中，黑色和红色的边是树边，蓝色是要添加的边，红色表示已经确定了边权的边，黑色表示还没确定，边上的数字表示这条边在给定顺序的下标。</p>
+<ol>
+<li><p>将这 $1$， $3$， $5$， $6$ 几条边按大小排序，并依次赋权</p>
+</li>
+<li><p>最后再给蓝色边赋权</p>
+</li>
+</ol>
+<p>我们按给定的顺序从左往右依次计算，如果是树边并且没赋权就直接赋权，如果是非树边就按照上面的方法构造即可。</p>
+<p>那么现在的问题就是如何更新环上的边以及查询那些边没有被赋权。</p>
+<p>这里提供两种方法。</p>
+<h3 id="树剖"><a href="#树剖" class="headerlink" title="树剖"></a>树剖</h3><p>线段树每个节点维护一个set，表示有哪些点没有被赋权，实现单点修改，区间查询即可（因为每个节点只会被计算一次，所以还是 $O (nlogn)$ 的）。</p>
+<p><del>代码太丑就不放了。</del></p>
+<h3 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a>并查集</h3><p>将赋过权的点缩成一个，然后将这条边的两端点分别暴力向上跳到 $lca$ 即可。</p>
+<p>详见代码。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PII pair <span class="string">&lt;int, int&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MP make_pair</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PB push_back</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">constexpr</span> <span class="type">int</span> N = <span class="number">5e5</span> + <span class="number">10</span>;</span><br><span class="line"><span class="comment">//存边</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> u, v, ty;</span><br><span class="line">&#125; e[N];</span><br><span class="line">vector &lt;PII&gt; g[N];</span><br><span class="line"><span class="comment">//fat是并查集，f是lca，ed[u]表示u和u的父亲组成边的编号，cnt用来记录当前赋的边权</span></span><br><span class="line"><span class="type">int</span> n, m, ans[N], fat[N], d[N], f[N][<span class="number">50</span>], ed[N], M, cnt;</span><br><span class="line"><span class="comment">//存有哪些边这次需要计算</span></span><br><span class="line">set &lt;<span class="type">int</span>&gt; s;</span><br><span class="line"><span class="comment">//初始化并查集</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">init</span> <span class="params">(<span class="type">int</span> n)</span> </span>&#123;<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) fat[i] = i;&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">find</span> <span class="params">(<span class="type">int</span> x)</span> </span>&#123;<span class="keyword">return</span> fat[x] == x ? x : fat[x] = <span class="built_in">find</span> (fat[x]);&#125;</span><br><span class="line"><span class="comment">//将深度大的合并到深度小的</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">merge</span> <span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> p = <span class="built_in">find</span> (x), q = <span class="built_in">find</span> (y);</span><br><span class="line">    <span class="keyword">if</span> (p == q) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span> (d[p] &gt; d[q]) fat[p] = q;</span><br><span class="line">    <span class="keyword">else</span> fat[q] = p;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//预处理</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span> <span class="params">(<span class="type">int</span> u, <span class="type">int</span> fa, <span class="type">int</span> from)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    f[u][<span class="number">0</span>] = fa, d[u] = d[fa] + <span class="number">1</span>, ed[u] = from;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= M; i++) f[u][i] = f[f[u][i - <span class="number">1</span>]][i - <span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; (<span class="type">int</span>) g[u].<span class="built_in">size</span> (); i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> v = g[u][i].first, w = g[u][i].second;</span><br><span class="line">        <span class="keyword">if</span> (v == fa) <span class="keyword">continue</span>;</span><br><span class="line">        <span class="built_in">dfs</span> (v, u, w);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//求lca</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">lca</span> <span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (d[y] &lt; d[x]) <span class="built_in">swap</span> (x, y);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = M; i &gt;= <span class="number">0</span>; i--) &#123;<span class="keyword">if</span> (d[f[y][i]] &gt;= d[x]) y = f[y][i];&#125;</span><br><span class="line">    <span class="keyword">if</span> (x == y) <span class="keyword">return</span> x;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = M; i &gt;= <span class="number">0</span>; i--) &#123;<span class="keyword">if</span> (f[y][i] != f[x][i]) x = f[x][i], y = f[y][i];&#125;</span><br><span class="line">    <span class="keyword">return</span> f[x][<span class="number">0</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//fat也表示组成这个所成的点中深度最浅的点</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">update</span> <span class="params">(<span class="type">int</span> u, <span class="type">int</span> v)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">find</span> (u) == <span class="built_in">find</span> (v)) <span class="keyword">return</span>;</span><br><span class="line">    <span class="type">int</span> fa = <span class="built_in">lca</span> (u, v);</span><br><span class="line">    u = <span class="built_in">find</span> (u), v = <span class="built_in">find</span> (v);</span><br><span class="line">    <span class="comment">//跳u点</span></span><br><span class="line">    <span class="keyword">while</span> (d[u] &gt; d[fa]) </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!ans[ed[u]]) s.<span class="built_in">insert</span> (ed[u]);</span><br><span class="line">        <span class="built_in">merge</span> (u, f[u][<span class="number">0</span>]);</span><br><span class="line">        <span class="comment">//每次跳到缩成点深度最浅的地方</span></span><br><span class="line">        u = <span class="built_in">find</span> (f[u][<span class="number">0</span>]);</span><br><span class="line">        <span class="keyword">if</span> (d[u] &lt;= d[fa]) <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//跳v点</span></span><br><span class="line">    <span class="keyword">while</span> (d[v] &gt; d[fa]) </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!ans[ed[v]]) s.<span class="built_in">insert</span> (ed[v]);</span><br><span class="line">        <span class="built_in">merge</span> (v, f[v][<span class="number">0</span>]);</span><br><span class="line">        <span class="comment">//每次跳到缩成点深度最浅的地方</span></span><br><span class="line">        v = <span class="built_in">find</span> (f[v][<span class="number">0</span>]);</span><br><span class="line">        <span class="keyword">if</span> (d[v] &lt;= d[fa]) <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//给边赋权</span></span><br><span class="line">    <span class="keyword">while</span> (!s.<span class="built_in">empty</span> ()) </span><br><span class="line">    &#123;</span><br><span class="line">        ans[*s.<span class="built_in">begin</span> ()] = ++cnt;</span><br><span class="line">        s.<span class="built_in">erase</span> (s.<span class="built_in">begin</span> ());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span> (<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span> (<span class="number">0</span>);</span><br><span class="line">    cout.<span class="built_in">tie</span> (<span class="number">0</span>);</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="built_in">init</span> (n);</span><br><span class="line">    M = <span class="built_in">log2</span> (n) + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= m; i++) cin &gt;&gt; e[i].u &gt;&gt; e[i].v &gt;&gt; e[i].ty;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= m; i++) <span class="keyword">if</span> (e[i].ty) g[e[i].u].<span class="built_in">PB</span> (<span class="built_in">MP</span> (e[i].v, i)), g[e[i].v].<span class="built_in">PB</span> (<span class="built_in">MP</span> (e[i].u, i));</span><br><span class="line">    <span class="built_in">dfs</span> (<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= m; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//如果是非树边就先处理环上的，再给自己赋值</span></span><br><span class="line">        <span class="keyword">if</span> (!e[i].ty) <span class="built_in">update</span> (e[i].u, e[i].v), ans[i] = ++cnt;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (!ans[i]) ans[i] = ++cnt, <span class="built_in">merge</span> (e[i].u, e[i].v);</span><br><span class="line">        <span class="comment">//如果是树边就给自己赋权并合并边所连接的点</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= m; i++) cout &lt;&lt; ans[i] &lt;&lt; <span class="string">&quot; \n&quot;</span>[i == m];</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">4 5</span></span><br><span class="line"><span class="comment">1 2 0</span></span><br><span class="line"><span class="comment">2 3 1</span></span><br><span class="line"><span class="comment">3 4 1</span></span><br><span class="line"><span class="comment">2 4 0</span></span><br><span class="line"><span class="comment">1 3 1</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">3 1 4 5 2</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">首页</a></li>
+        
+          <li><a href="/search/">搜索</a></li>
+        
+          <li><a href="/about/">关于</a></li>
+        
+          <li><a href="/archives/">归档</a></li>
+        
+          <li><a target="_blank" rel="noopener" href="http://github.com/probberechts">项目</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#AT-kupc2021-e"><span class="toc-number">1.</span> <span class="toc-text">AT_kupc2021_e</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E5%A4%A7%E6%84%8F"><span class="toc-number">1.1.</span> <span class="toc-text">题目大意</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%81%9A%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">做法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%91%E5%89%96"><span class="toc-number">1.2.1.</span> <span class="toc-text">树剖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B6%E6%9F%A5%E9%9B%86"><span class="toc-number">1.2.2.</span> <span class="toc-text">并查集</span></a></li></ol></li></ol></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://bijhla.github.io/2025/01/22/AT-kupc2021-e/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://bijhla.github.io/2025/01/22/AT-kupc2021-e/&text=AT_kupc2021_e"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://bijhla.github.io/2025/01/22/AT-kupc2021-e/&title=AT_kupc2021_e"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://bijhla.github.io/2025/01/22/AT-kupc2021-e/&is_video=false&description=AT_kupc2021_e"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=AT_kupc2021_e&body=Check out this article: http://bijhla.github.io/2025/01/22/AT-kupc2021-e/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://bijhla.github.io/2025/01/22/AT-kupc2021-e/&title=AT_kupc2021_e"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://bijhla.github.io/2025/01/22/AT-kupc2021-e/&title=AT_kupc2021_e"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://bijhla.github.io/2025/01/22/AT-kupc2021-e/&title=AT_kupc2021_e"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://bijhla.github.io/2025/01/22/AT-kupc2021-e/&title=AT_kupc2021_e"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://bijhla.github.io/2025/01/22/AT-kupc2021-e/&name=AT_kupc2021_e&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://bijhla.github.io/2025/01/22/AT-kupc2021-e/&t=AT_kupc2021_e"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2025
+    bijhla
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/search/">搜索</a></li><!--
+     --><!--
+       --><li><a href="/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/archives/">归档</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/probberechts">项目</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'bijhla';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+<!-- utterances Comments -->
+
+</body>
+</html>
