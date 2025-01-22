@@ -602,7 +602,7 @@ body {
   font-weight: 700;
   font-style: normal;
   font-size: 2rem;
-  line-height: 2rem;
+  line-height: 1.5rem;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
@@ -857,7 +857,7 @@ body {
 }
 #header-post #toc .toc-level-4 {
   color: #747070;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 #header-post #toc .toc-level-5 {
   display: none;
