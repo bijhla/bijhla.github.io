@@ -13,13 +13,13 @@
 <meta property="og:site_name" content="bijhla&#39;s blog">
 <meta property="og:description" content="AT_kupc2021_e题目大意给定一张无向连通图以及一颗生成树，要求给这张图的每条边赋权值，使得这颗生成树为最小生成树，且边权按照给定的顺序排列起来的字典序最小。 做法我们将其视作向树上加边，而每添加一条边就会出现一个环（只考虑树边），而这条边的权值应该比环上的边的权值（还没赋权的）都小。 e.g.  在这张图中，黑色和红色的边是树边，蓝色是要添加的边，红色表示已经确定了边权的边，黑色表示还没">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="l:\otherfiles\git\hexo\source_posts\p3t1nubh.png">
+<meta property="og:image" content="l:\otherfiles\git\hexo\source_posts\p3t1nubh-1737529497767-3.png">
 <meta property="article:published_time" content="2025-01-22T05:12:01.000Z">
-<meta property="article:modified_time" content="2025-01-22T05:14:22.039Z">
+<meta property="article:modified_time" content="2025-01-22T07:05:00.694Z">
 <meta property="article:author" content="bijhla">
 <meta property="article:tag" content="题解">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="l:\otherfiles\git\hexo\source_posts\p3t1nubh.png">
+<meta name="twitter:image" content="l:\otherfiles\git\hexo\source_posts\p3t1nubh-1737529497767-3.png">
     
     
       
@@ -165,7 +165,7 @@
     <h1 id="AT-kupc2021-e"><a href="#AT-kupc2021-e" class="headerlink" title="AT_kupc2021_e"></a>AT_kupc2021_e</h1><h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>给定一张<strong>无向连通图</strong>以及一颗<strong>生成树</strong>，要求给这张图的每条边赋权值，使得这颗生成树为<strong>最小生成树</strong>，且边权按照<strong>给定</strong>的顺序排列起来的<strong>字典序最小</strong>。</p>
 <h2 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h2><p>我们将其视作向树上加边，而每添加一条边就会出现一个环（只考虑树边），而这条边的权值应该比环上的边的权值（还没赋权的）都小。</p>
 <p>e.g.</p>
-<p><img src="L:\otherfiles\git\hexo\source_posts\p3t1nubh.png"></p>
+<p><img src="L:\otherfiles\git\hexo\source_posts\p3t1nubh-1737529497767-3.png"></p>
 <p>在这张图中，黑色和红色的边是树边，蓝色是要添加的边，红色表示已经确定了边权的边，黑色表示还没确定，边上的数字表示这条边在给定顺序的下标。</p>
 <ol>
 <li><p>将这 $1$， $3$， $5$， $6$ 几条边按大小排序，并依次赋权</p>
