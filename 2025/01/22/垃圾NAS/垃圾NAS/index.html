@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="Here&#39;s something encrypted, password is required to continue reading.">
+    <meta name="description" content="垃圾NAS本文仅提供部署的文档或博客地址，无具体的部署过程 硬件:CPU:闲鱼 G4560T 25元 主板:闲鱼 华硕h110m-f 105元 内存:剩的两根各4G 0元 硬盘:剩的机械1T 0元 电源:闲鱼&#x2F;pdd 垃圾长城拆机160w&#x2F;200w 15元 机箱:pdd 垃圾matx 30元 散热:pdd 垃圾  5元 软件:系统:ubuntu emby+alist+komga+阅读服务端+tai">
 <meta property="og:type" content="article">
 <meta property="og:title" content="垃圾NAS">
 <meta property="og:url" content="http://bijhla.github.io/2025/01/22/%E5%9E%83%E5%9C%BENAS/%E5%9E%83%E5%9C%BENAS/index.html">
 <meta property="og:site_name" content="bijhla&#39;s blog">
-<meta property="og:description" content="Here&#39;s something encrypted, password is required to continue reading.">
+<meta property="og:description" content="垃圾NAS本文仅提供部署的文档或博客地址，无具体的部署过程 硬件:CPU:闲鱼 G4560T 25元 主板:闲鱼 华硕h110m-f 105元 内存:剩的两根各4G 0元 硬盘:剩的机械1T 0元 电源:闲鱼&#x2F;pdd 垃圾长城拆机160w&#x2F;200w 15元 机箱:pdd 垃圾matx 30元 散热:pdd 垃圾  5元 软件:系统:ubuntu emby+alist+komga+阅读服务端+tai">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-01-22T05:10:32.000Z">
-<meta property="article:modified_time" content="2025-01-22T08:08:22.096Z">
+<meta property="article:modified_time" content="2025-01-22T08:54:29.222Z">
 <meta property="article:author" content="bijhla">
 <meta property="article:tag" content="折腾">
 <meta name="twitter:card" content="summary">
@@ -111,12 +111,16 @@
   <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://bijhla.github.io/2025/01/22/%E5%9E%83%E5%9C%BENAS/%E5%9E%83%E5%9C%BENAS/&title=垃圾NAS"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://bijhla.github.io/2025/01/22/%E5%9E%83%E5%9C%BENAS/%E5%9E%83%E5%9C%BENAS/&title=垃圾NAS"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://bijhla.github.io/2025/01/22/%E5%9E%83%E5%9C%BENAS/%E5%9E%83%E5%9C%BENAS/&title=垃圾NAS"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://bijhla.github.io/2025/01/22/%E5%9E%83%E5%9C%BENAS/%E5%9E%83%E5%9C%BENAS/&name=垃圾NAS&description=Here&#39;s something encrypted, password is required to continue reading."><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://bijhla.github.io/2025/01/22/%E5%9E%83%E5%9C%BENAS/%E5%9E%83%E5%9C%BENAS/&name=垃圾NAS&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://bijhla.github.io/2025/01/22/%E5%9E%83%E5%9C%BENAS/%E5%9E%83%E5%9C%BENAS/&t=垃圾NAS"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
     
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9E%83%E5%9C%BENAS"><span class="toc-number">1.</span> <span class="toc-text">垃圾NAS</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A1%AC%E4%BB%B6"><span class="toc-number">1.1.</span> <span class="toc-text">硬件:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6"><span class="toc-number">1.2.</span> <span class="toc-text">软件:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2"><span class="toc-number">1.2.1.</span> <span class="toc-text">部署:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A3%85%E6%9C%BA%E5%AE%89%E8%A3%85ubuntu"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">装机安装ubuntu</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">准备工作:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%9B%98"><span class="toc-number">1.2.1.3.</span> <span class="toc-text">网盘:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%BC%AB%E7%94%BB"><span class="toc-number">1.2.1.4.</span> <span class="toc-text">漫画:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%98%85%E8%AF%BB%E6%9C%8D%E5%8A%A1%E7%AB%AF"><span class="toc-number">1.2.1.5.</span> <span class="toc-text">阅读服务端</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%85%A7%E7%89%87"><span class="toc-number">1.2.1.6.</span> <span class="toc-text">照片:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD"><span class="toc-number">1.2.1.7.</span> <span class="toc-text">下载:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BD%B1%E9%9F%B3"><span class="toc-number">1.2.1.8.</span> <span class="toc-text">影音:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%AC%E7%BD%91%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.2.1.9.</span> <span class="toc-text">公网服务:</span></a></li></ol></li></ol></li></ol></li></ol>
+      </div>
     
   </span>
 </div>
@@ -165,18 +169,36 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="254529132e1e3107be0df5071b0fb0cfcd99958d202af188f739eebd3acdb6ce">c4ba8dd078a8c9fe9df540edb6910924b1a9a6b4838d3eaeabf48f8b5cbd914bd55fecc69660f664149866792a98c14ebf8da04b7f2c176ad9eaa5e4a574e3b41c21c25cc7974b679b916fb889566a50bffb27529fbbaea951cba4e77c2b024d6ea269537cbf275865d90ac4ecf3c1f21c9d604861a1265dd5f5825c79664ca4cd01bfdaf7be1b1821c6bca0b10195fd02480aec8f63152f2d49b3e0bf378db2199cafdad262769fcbd4cffeb52a6cfbcaeb927a298cef2184711f6eeb59d98e002a32941f4f74c8ff5a2e422a0b347e71eb432b73cdc0ce486b5a7de5493d5f23cd033b988d4a910a0d32b23691a005a1b2a7b69ccea60650b03305ea78620d549442cd150829270bf2c93677db1342bded5d3444665d19dd3765c7fca2bf2110cdfd26dbfa917f579891caec49f0df57a26ac3693b4c804a82bb5b5ea9ee326c4397d2b18ba0e9f9c0c8075744c511f2a7115b98499d556848a576ded24cf02517a6801948c5a6e3caa8ec29feac9d91124c7519ef87295867d6bdc22ba86eaf867b466553a022f804ad9b922ddba1e64c190320ac70a4b13ccd5be7533aaeaf5de95899209415184dd3e333b1097a59aa54a09d0cb7efdb6642922748a02ede2baee0dbceff30d195ad3af5aea4a59afba4716bbdf6901fb47264d2cedb0439eb48a8ebb74cd224b39c413b2ba16c78175b646fedfac9ced2a2413bbc8592fb83e9b774725b17fe182fc9a02f7c6165006712936f5a2235dae74f46a83c725fa41d030d244cc3526e262fcd5d518288c43e14613cd1acc29bbb84e8ed3c1acc75f296efcb8a6c9e3acc671ed80202351dc107fb586fbb8c7ba7e4d789ab9d0bc59e5703bdb6eaa86bec529b734ae97b24fbd754b6b164daac8cc1e7588e6f4254735724be798115bdcbee3ac143e10f357f2c7f82fb1d622d50c087c1e89ab6efd8984f466699b3ace81fbd9b4f48bc1301bac141285ad6e105284b5f055837e9003990db739c968a5eb361a1bed5a87ac3542aa35b9b1a66bea833b804d85f7438a685f40f93c54c2eb3c6eec4b4102f37b42d63d57eb03a32881bcd29a3538a674ce6f330063ef9e145bfed0f6f8750731f1fad58c1701b4556e8b93ef0530d57d05f442a32e2898a878bb53769733b625c8029da7705be41f04d87997b7478fe96898fb70a409fa64e001b34b990e6fd0483ae27f23c437aea750a0eb3a1bc8dee4b17affda85728a61277a9cee672e92be496341d232462d90d41b537991bb0fc3e83e64e8a34cd99175b4986aab3dbec6a5cf6904349a7deff91e13d2398a3dd1ab5f306464a2999c70a095dc5879c53a7cffc62831833b4a9e4d06f3aeabf18a60c256b6db2e15c3d0351b51fd655be7004fbef9e28fe7759595ef5e5f4ef92c1781ac77e3c6c9dee14441f57d7e08857acf7e59876d2b88946e4feea2488dccb1ba1f91dcd337e42376a4fd3d89c40c6b22a88f92ae4eeb1ce7e1807caa0058056485565ede465f1aec65c455eb1cff6ad1d5b5f7aed3b6a173e4e0b9bb67b417f246fead0b10ddb6c9afb75b5a570c15016cf30191862100d02639723e9aca15b18f013d2417f47d55507bc8b857f407f3bd6bed33a64c50f72919416ce56eb79c4c803e3918b0c14fbba66de3d36053879ef338f40de7f3d9ee498d62e57e9e1971c6247b368cfd306bed5fd4ef803caedc889cfe36713eaf44b4709b243694e2b568b528409d997e473c9a5d7abce8d1aef68e7ed7ee25ed791455474246dfb9e20bc12a942e15aed5c6828385a3adfa8b47bb44ce8c42e9c2f4091f5a91c0f63eab282ea6cab8e9aa71f3319dd9bcd5b88d4ce6e6f9bc39840c802cb8f042ffa01baf62f6e1319b52e1ed55082fcf7dcd0949370821ad0d97e40e34315d84b268e5a3d5ce0902164979a196d5e77693f7509c72856dd02753b44f74e3be97b665cddbe79ef232443d5e9845473f4705c9e61f95657003958c44afc817f77ead5421dbc5f58209298b404e74b7e061d47de7f769ed3d9384badc80890a2f2bdb679e258c5d1b852634bbedf5079bdd6f750c023fb052ec9f0e16070a7732d219b4d9d074077a8c70b06c0cd8b37247a17c5b728693aa5ffbd0630571cf98b9cff55a6fa60ac7ec3e9cd149ac9f268db7f3e00d1d1c57e22b46ccce729360b8da5bc640529bcd3535f376add5e83fbda30d4638569b7e58c930c1b8b981d8c4a62440e4f7a551c37c265908b6d52b89667d5ed5062d4e09ddf11a0a3c5e87d8576f34925e44818032e24bb664fdb2036a6a4c283903f95d3ded60ea7480c21d7bdd90db66f2ddf31d7ea59e6635d41b0e59c4da6e6f5fdc23fb1218921d755c27c58acdcd683f0884e1b7239ec0c1d51ac669a84005ce31324de9f54811064f3bed63c5e261cf4c8e0a29f050379e7e5caa5e30139aef27891f846b74ab5774f65c3a407bab1b139462ad542fc1c7409669f0245d3eecf71c0fe6e06d57743ed16f17bcc670a4efaa51f73ecdc9bd84bd071b6a660fd9e38e241cefceb0864c0644bbdc182aada09d924c89a95ec3669948929b10534f22238f4fd3d10918dbcaf39ebba1c0efebfc70c67b842d59aa010ed48f55cea446a58ea9f50e46d804de9d3f19f6a08f380f62c0f1a7617401104b691b8a71a06d7941f6995ac7a3a35039603e1e281433c7978c83373d83f3d9e2b82ccbb3a54b1a5253a4bbf6b8fc612732c5d14961725edbacedb324a6e96e6103fdbddf1be36eefd7d301554025de4efa1b836add6fbf30a86fac5363c232a5ca1e060e93e5b3df8f3cdf06ec520ad53137856e7cce02565bae78f518da9a60f38aee9e3474266f300cd948e49f27e5990ac4cea348b5d93d89c484df5b428ae0152218a2e3ef3e1dd10e86dedb8fa99c8a6d7590394661814dbc588e0d15197f02aa9ab2919f7f8c2b2eaa7ab1a766a217d8f9ac098663db0613dcc62b7808eb754a32deb556b8b2ec35376feaf955dd26aaf82e60823b3ff38f33ad58f160428ad1eaf8daec1140a69fc6a8490112512ead68cbb14852711d3e5e9c107fa82feeda8abf90c5d67edea0500f8c98b9af33634595c0d71c9f690d4c9913f8f7f31ebf2eeb15fb7fcf8ee32318fd615a27f6ecb0746de773e30c1a7a696adbd6ab177c5a0272daa10c573b5f0151544ea1e948765488b78fa2811a8048a00bacf458e74ecdf440985ae078a0efbff658fa7a91e7dec42a233b65caa652ed17b3a5b9ef2dd0c736f3cdf2eb99d066901af1f8ec218fa82f9d91045612f37f9be9804fc93f4c6dfd3d52786a490669f14c00d7381140ec1dfa4ff4fe9e3bd300af0653068cd1b7f055c2371cc6a4b9f49b227b00818bf2065f81914d19fcda4cab4dee44049862d35868926186d4e9e85a9eb0cc6bd5ceb7f4cd432bea6d9d6ef20f0500aa97973b768866ca5f38910d07bb880d8ba33b62a6b73e2f87dd1579c42a713d63363366ac7b4c5d561be84f6aa1dc415b980aa86e59d4be80fd798f56321328c1cd2481c43bc9015b5a4891fe1ac28b9a2cbd989259dc1011fa6a9a41f1e145ebc39f0aede892c8ee23e264526b058cfc09e53e1792cbfb61a9bf782ba65e53efb2c8716e95b7ef45108dcf9291d41d5bd792ba7b59b28edf90ca20e1a15274b87dea14c352187be6cbb62ea3a803b2e17745b02f5e2c35d19faeb8c83a9c9a104303ac55e9e4360ca2c3cec7023afbc669cc3649ffd23a2c39408efdd36009f835a86eb321dddab0b1b47cee363c2432fcaa4305ee1721b667dd9e878dd61fded33204d004e4e48b493c080f37b45f1ca0c8e215920253f919c8b163be5edac8c2fe6439a87746e28f537617e6825b418a3cb213b3d875bf6fa1118fd41b65eaeebe1ee483dfe4b64e915f6153615feb70565d772df9844f211d32acdfc050f34fed01e3a8d68b760c53aa3f19c5fc8ade030f4ade4cb6b9ea07b4ff3240d1ea76a661c0d3c419621ad3cdab4837c110f9f73b5939e0bb054d1c34badef043c9924dec9e28e0077322530dc5f1be5b601bb2a641d0782ab3477214acf21f5fe9512259e33cbc40cca7a3cd1c3bbb1e7dbc20a064801eaff994dc66ae99f812d7a6eaa1b78c0737b093fdc6a4f8bfa39804971fd1fcefe2e048eff678de3bc608bac888ee6227f71e3f2c61ae4ca61164dc0eae0f38983ecd23088f81f1c4f417a3d1ff0fd9c71a0c5556c2b29cf5748d80d3c58cf34aaaa3f9ea25a8de92cc87efeb5436450c2aa77f3f3e8752dab957713744f154dd0458fa9c42f088970b51adf3a62f8783bb502ec090a7cc0a8f4c143b6c13333932cf1f50b570339465a279569f3cc0dba1f08229efa1f46b38587b3ccf061276fecafd6615993892cec47bfad0ddae062cf0bc4f280aa91a7df784b2d51583c58788e4352395103e0b567480e6c66575bf2bc244f3b5d680d2fa12090e14800f8b626ff3a95b457bd8099d738ace76a79e253a70a6c26963b5b6b7734ecf279ead0883210df66067ba8132a78e9e6a5a8ed38f1323b7ff9a2ca87ad2e96278618f327ecfe5373e8bcff98d094f89ad12f0472573d937a4b740c9e02eb5438261a80eeb3c01c888cfce13044c3fcc74e6041415f64bd36bf8e345900435840c8c9d115f2665afba55cd1531f04ddcf7c81a22fd9b1ca34088c0b6337da83a7ccdd3745ee6ac9a1144eb4439c3c84c81e112c4721502fa9446d59bef60e2bd677069561ebf80b1371126d7f529b6a1f</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-default">
-      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
+    <h1 id="垃圾NAS"><a href="#垃圾NAS" class="headerlink" title="垃圾NAS"></a>垃圾NAS</h1><p><strong>本文仅提供部署的文档或博客地址，无具体的部署过程</strong></p>
+<h2 id="硬件"><a href="#硬件" class="headerlink" title="硬件:"></a>硬件:</h2><p>CPU:闲鱼 G4560T 25元</p>
+<p>主板:闲鱼 华硕h110m-f 105元</p>
+<p>内存:剩的两根各4G 0元</p>
+<p>硬盘:剩的机械1T 0元</p>
+<p>电源:闲鱼/pdd 垃圾长城拆机160w/200w 15元</p>
+<p>机箱:pdd 垃圾matx 30元</p>
+<p>散热:pdd 垃圾  5元</p>
+<h2 id="软件"><a href="#软件" class="headerlink" title="软件:"></a>软件:</h2><p>系统:ubuntu</p>
+<p>emby+alist+komga+阅读服务端+tailscale+immich+transmission</p>
+<p>影音+网盘+漫画+电纸书+公网服务+照片+下载</p>
+<p>待提高:</p>
+<p>电源可以往下降，但我没找到合适的，至少80w，需要主板的24pin，u的12pin和至少1个sata以及风扇</p>
+<p>机箱也可以降，只要是matx就行，没显卡不考虑限高，没用itx板是因为支持G4560T的itx板太贵</p>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署:"></a>部署:</h3><h4 id="装机安装ubuntu"><a href="#装机安装ubuntu" class="headerlink" title="装机安装ubuntu"></a>装机安装ubuntu</h4><h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作:"></a>准备工作:</h4><p>win下:xshell,transmission,cherry studio(AI,推荐安装),浏览器沉浸式翻译插件(阅读英语文档)</p>
+<p>linux下:<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43145941/article/details/119345234">openssh-server</a>,<a target="_blank" rel="noopener" href="https://blog.csdn.net/mudarn/article/details/144209607">docker和doker-compose</a>,<a target="_blank" rel="noopener" href="https://mihomo.party/docs/install">mihomo</a></p>
+<h4 id="网盘"><a href="#网盘" class="headerlink" title="网盘:"></a>网盘:</h4><p>比较简单，有懒人脚本</p>
+<p><a target="_blank" rel="noopener" href="https://alist.nn.ci/zh/guide/install/script.html">alist</a></p>
+<h4 id="漫画"><a href="#漫画" class="headerlink" title="漫画:"></a>漫画:</h4><p>简单，官网包下下来就能用</p>
+<p><a target="_blank" rel="noopener" href="https://download.komga.org/">komga</a></p>
+<h4 id="阅读服务端"><a href="#阅读服务端" class="headerlink" title="阅读服务端"></a>阅读服务端</h4><p>直接部署服务器版最方便</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/hectorqin/reader/blob/master/doc.md#%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%89%88">阅读服务端</a></p>
+<h4 id="照片"><a href="#照片" class="headerlink" title="照片:"></a>照片:</h4><p><a target="_blank" rel="noopener" href="https://immich.app/docs/install/script">immich官方的一键脚本</a></p>
+<h4 id="下载"><a href="#下载" class="headerlink" title="下载:"></a>下载:</h4><p>看着挺简单的</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/baoboshi/p/16404774.html">transmission</a></p>
+<h4 id="影音"><a href="#影音" class="headerlink" title="影音:"></a>影音:</h4><p>感觉对小白而言是最麻烦的一个，参照作者文档部署吧</p>
+<p><a target="_blank" rel="noopener" href="https://www.chiphell.com/thread-2375777-1-1.html">Jellyfin中国特供版</a></p>
+<h4 id="公网服务"><a href="#公网服务" class="headerlink" title="公网服务:"></a>公网服务:</h4><p><a target="_blank" rel="noopener" href="https://tailscale.com/kb/1031/install-linux">tailscale官方文档</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.yisu.com/ask/96541863.html">博客</a></p>
+
   </div>
 </article>
 
@@ -206,6 +228,10 @@
 
     
     
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9E%83%E5%9C%BENAS"><span class="toc-number">1.</span> <span class="toc-text">垃圾NAS</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A1%AC%E4%BB%B6"><span class="toc-number">1.1.</span> <span class="toc-text">硬件:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6"><span class="toc-number">1.2.</span> <span class="toc-text">软件:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2"><span class="toc-number">1.2.1.</span> <span class="toc-text">部署:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A3%85%E6%9C%BA%E5%AE%89%E8%A3%85ubuntu"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">装机安装ubuntu</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">准备工作:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%9B%98"><span class="toc-number">1.2.1.3.</span> <span class="toc-text">网盘:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%BC%AB%E7%94%BB"><span class="toc-number">1.2.1.4.</span> <span class="toc-text">漫画:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%98%85%E8%AF%BB%E6%9C%8D%E5%8A%A1%E7%AB%AF"><span class="toc-number">1.2.1.5.</span> <span class="toc-text">阅读服务端</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%85%A7%E7%89%87"><span class="toc-number">1.2.1.6.</span> <span class="toc-text">照片:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD"><span class="toc-number">1.2.1.7.</span> <span class="toc-text">下载:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BD%B1%E9%9F%B3"><span class="toc-number">1.2.1.8.</span> <span class="toc-text">影音:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%AC%E7%BD%91%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.2.1.9.</span> <span class="toc-text">公网服务:</span></a></li></ol></li></ol></li></ol></li></ol>
+      </div>
+    
 
     <div id="share-footer" style="display: none">
       <ul>
@@ -218,7 +244,7 @@
   <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://bijhla.github.io/2025/01/22/%E5%9E%83%E5%9C%BENAS/%E5%9E%83%E5%9C%BENAS/&title=垃圾NAS"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://bijhla.github.io/2025/01/22/%E5%9E%83%E5%9C%BENAS/%E5%9E%83%E5%9C%BENAS/&title=垃圾NAS"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://bijhla.github.io/2025/01/22/%E5%9E%83%E5%9C%BENAS/%E5%9E%83%E5%9C%BENAS/&title=垃圾NAS"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://bijhla.github.io/2025/01/22/%E5%9E%83%E5%9C%BENAS/%E5%9E%83%E5%9C%BENAS/&name=垃圾NAS&description=Here&#39;s something encrypted, password is required to continue reading."><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://bijhla.github.io/2025/01/22/%E5%9E%83%E5%9C%BENAS/%E5%9E%83%E5%9C%BENAS/&name=垃圾NAS&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://bijhla.github.io/2025/01/22/%E5%9E%83%E5%9C%BENAS/%E5%9E%83%E5%9C%BENAS/&t=垃圾NAS"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
@@ -226,6 +252,8 @@
 
     <div id="actions-footer">
         <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
         
         <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
         <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
