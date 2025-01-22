@@ -481,7 +481,7 @@ body {
   background-color: #1d1f21;
   color: #c9cacc;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
   font-family: "Menlo", "Meslo LG", monospace;
   line-height: 1.725;
   text-rendering: geometricPrecision;
@@ -601,8 +601,8 @@ body {
   letter-spacing: 0.01em;
   font-weight: 700;
   font-style: normal;
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 2.2rem;
+  line-height: 2.7rem;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
@@ -846,7 +846,7 @@ body {
 }
 #header-post #toc .toc-level-2 {
   color: #c9cacc;
-  font-size: 0.8rem;
+  font-size: 1.8rem;
 }
 #header-post #toc .toc-level-2:before {
   color: #2bbc8a;
@@ -854,11 +854,11 @@ body {
 }
 #header-post #toc .toc-level-3 {
   color: #908d8d;
-  font-size: 0.7rem;
+  font-size: 1.4rem;
 }
 #header-post #toc .toc-level-4 {
   color: #747070;
-  font-size: 0.4rem;
+  font-size: 1rem;
 }
 #header-post #toc .toc-level-5 {
   display: none;
