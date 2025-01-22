@@ -601,8 +601,8 @@ body {
   letter-spacing: 0.01em;
   font-weight: 700;
   font-style: normal;
-  font-size: 2.2rem;
-  line-height: 2.7rem;
+  font-size: 2rem;
+  line-height: 2rem;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
@@ -846,7 +846,7 @@ body {
 }
 #header-post #toc .toc-level-2 {
   color: #c9cacc;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
 }
 #header-post #toc .toc-level-2:before {
   color: #2bbc8a;
@@ -854,7 +854,7 @@ body {
 }
 #header-post #toc .toc-level-3 {
   color: #908d8d;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
 }
 #header-post #toc .toc-level-4 {
   color: #747070;
