@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="Kindle刷安卓相关教程及资源我发现好像写kindle越狱相关内容的好像很多，但是写刷安卓的相关内容的人就要少很多，就想着随便写写。我只进行了kpw3的测试，但从文档来看，应该是通用的。 先放支持的机型：  另外————刷机前备份！！！ 刷机前备份！！！ 刷机前备份！！！ 本教程针对windows，如果有错误或者遗漏请大家直接指出。 使用体验刷入安卓后，使用第三方阅读软件（如静读天下、微信读书墨">
+<meta property="og:type" content="article">
+<meta property="og:title" content="垃圾NAS">
+<meta property="og:url" content="http://bijhla.github.io/2025/07/14/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/index.html">
+<meta property="og:site_name" content="bijhla&#39;s blog">
+<meta property="og:description" content="Kindle刷安卓相关教程及资源我发现好像写kindle越狱相关内容的好像很多，但是写刷安卓的相关内容的人就要少很多，就想着随便写写。我只进行了kpw3的测试，但从文档来看，应该是通用的。 先放支持的机型：  另外————刷机前备份！！！ 刷机前备份！！！ 刷机前备份！！！ 本教程针对windows，如果有错误或者遗漏请大家直接指出。 使用体验刷入安卓后，使用第三方阅读软件（如静读天下、微信读书墨">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/bijhla/note-gen-image-sync@main/f40b46e8-a503-4462-ad68-65b26d2e3e22.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/bijhla/note-gen-image-sync@main/8a3e8160-6646-4ac8-82d2-574db5782c97.png">
+<meta property="article:published_time" content="2025-07-14T09:17:48.000Z">
+<meta property="article:modified_time" content="2025-07-14T09:18:07.460Z">
+<meta property="article:author" content="bijhla">
+<meta property="article:tag" content="折腾">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/bijhla/note-gen-image-sync@main/f40b46e8-a503-4462-ad68-65b26d2e3e22.png">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>垃圾NAS</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="顶部" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/search/">搜索</a></li><!--
+     --><!--
+       --><li><a href="/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/tags/">标签</a></li><!--
+     --><!--
+       --><li><a href="/categories/">分类</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/bijhla">项目</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="下一篇" href="/2025/01/25/%E5%B8%B8%E7%94%A8%E8%8B%B1%E6%96%87%E7%BC%A9%E5%86%99/%E5%B8%B8%E7%94%A8%E8%8B%B1%E6%96%87%E7%BC%A9%E5%86%99/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="分享文章" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://bijhla.github.io/2025/07/14/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://bijhla.github.io/2025/07/14/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/&text=垃圾NAS"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://bijhla.github.io/2025/07/14/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/&title=垃圾NAS"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://bijhla.github.io/2025/07/14/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/&is_video=false&description=垃圾NAS"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=垃圾NAS&body=Check out this article: http://bijhla.github.io/2025/07/14/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://bijhla.github.io/2025/07/14/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/&title=垃圾NAS"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://bijhla.github.io/2025/07/14/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/&title=垃圾NAS"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://bijhla.github.io/2025/07/14/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/&title=垃圾NAS"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://bijhla.github.io/2025/07/14/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/&title=垃圾NAS"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://bijhla.github.io/2025/07/14/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/&name=垃圾NAS&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://bijhla.github.io/2025/07/14/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/&t=垃圾NAS"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90"><span class="toc-number">1.</span> <span class="toc-text">Kindle刷安卓相关教程及资源</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C"><span class="toc-number">1.1.</span> <span class="toc-text">使用体验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B"><span class="toc-number">1.2.</span> <span class="toc-text">安装教程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B6%8A%E7%8B%B1"><span class="toc-number">1.2.1.</span> <span class="toc-text">越狱</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%B7%E6%9C%BA"><span class="toc-number">1.2.2.</span> <span class="toc-text">刷机</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%89%E8%A3%85fastboot"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">安装fastboot</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B0%86%E9%A9%B1%E5%8A%A8%E6%96%87%E4%BB%B6%E6%8B%B7%E8%B4%9D%E5%88%B0kindle"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">将驱动文件拷贝到kindle</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%AE%89%E5%8D%93"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">安装安卓</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%91%E7%A0%96"><span class="toc-number">1.2.3.</span> <span class="toc-text">救砖</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="toc-number">1.3.</span> <span class="toc-text">参考文献</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E8%B5%84%E6%BA%90%E4%B8%8B%E8%BD%BD"><span class="toc-number">1.4.</span> <span class="toc-text">相关资源下载</span></a></li></ol></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        垃圾NAS
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">bijhla</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2025-07-14T09:17:48.000Z" class="dt-published" itemprop="datePublished">2025-07-14</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/%E6%95%99%E7%A8%8B/">教程</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/%E6%8A%98%E8%85%BE/" rel="tag">折腾</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h2 id="Kindle刷安卓相关教程及资源"><a href="#Kindle刷安卓相关教程及资源" class="headerlink" title="Kindle刷安卓相关教程及资源"></a>Kindle刷安卓相关教程及资源</h2><p>我发现好像写kindle越狱相关内容的好像很多，但是写刷安卓的相关内容的人就要少很多，就想着随便写写。我只进行了kpw3的测试，但从文档来看，应该是通用的。</p>
+<p>先放支持的机型：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/bijhla/note-gen-image-sync@main/f40b46e8-a503-4462-ad68-65b26d2e3e22.png" alt="image.png"></p>
+<p>另外————<br><strong>刷机前备份！！！</strong> <strong>刷机前备份！！！</strong> <strong>刷机前备份！！！</strong></p>
+<p>本教程针对windows，如果有错误或者遗漏请大家直接指出。</p>
+<h3 id="使用体验"><a href="#使用体验" class="headerlink" title="使用体验"></a>使用体验</h3><p>刷入安卓后，使用第三方阅读软件（如静读天下、微信读书墨水屏版）的体验不错。但系统的流畅度无法与原生系统相比，打开应用或切换任务时会有明显卡顿。</p>
+<p>续航没有仔细测过，感觉下来是不如原系统的。</p>
+<p>安卓的版本是4.4，安装软件的限制比较大，我找了一些能用的软件放在文末了。</p>
+<h3 id="安装教程"><a href="#安装教程" class="headerlink" title="安装教程"></a>安装教程</h3><h4 id="越狱"><a href="#越狱" class="headerlink" title="越狱"></a>越狱</h4><p>这里就不做详细解释了，相关内容数不胜数，可以参考。<br><a target="_blank" rel="noopener" href="https://bookfere.com/post/1075.html">Kindle 通用越狱教程：适用版本小于等于 5.16.2.1.1 固件</a><br><a target="_blank" rel="noopener" href="https://linux.do/t/topic/781079">Kindle 越狱，Winterbreak，KOReader，你所需要知道的一切</a></p>
+<h4 id="刷机"><a href="#刷机" class="headerlink" title="刷机"></a>刷机</h4><p>重点放在这里，我刷机的时候还是有视频教程的，但是现在所有相关的资源和视频基本都被删除了。</p>
+<p>我找了好久才在一个国外的论坛（见参考文献/引用）上找到了相关的教程和文件，但是在这个论坛下载文件太慢了，我只下载了<a target="_blank" rel="noopener" href="https://1drv.ms/u/c/ea5df632d76db8d3/EeLaRahvqyBCkbztVz0xiSYBu8NzQWTzmulLRArAEiiRuQ?e=cK0U0F">kpw3的相关资源</a>。</p>
+<h5 id="安装fastboot"><a href="#安装fastboot" class="headerlink" title="安装fastboot"></a>安装fastboot</h5><p><img src="https://cdn.jsdelivr.net/gh/bijhla/note-gen-image-sync@main/8a3e8160-6646-4ac8-82d2-574db5782c97.png" alt="image.png"></p>
+<p>文件为 <code>adb-setup</code>，虽然我也不知道明明是fastboot但是要叫adb，但是文档是这么写的就这么做吧。</p>
+<h5 id="将驱动文件拷贝到kindle"><a href="#将驱动文件拷贝到kindle" class="headerlink" title="将驱动文件拷贝到kindle"></a>将驱动文件拷贝到kindle</h5><p>将 <code>uboot</code>中的 <code>main-htmlviewer.tar.gz</code>直接拷贝到kindle根目录，将 <code>extensions.zip</code>文件解压缩到 Kindle 的根目录。</p>
+<p>弹出kindle（无需拔下 USB），在 Kindle 界面打开 <code>KUAL</code>-&gt;<code>FlashAndroid</code>，然后设备会重启，这时候切勿触碰电源按钮。</p>
+<h5 id="安装安卓"><a href="#安装安卓" class="headerlink" title="安装安卓"></a>安装安卓</h5><p>运行 <code>start.exe</code> 后，会弹出一个命令行窗口。请完全根据命令行窗口中的提示操作，期间屏幕可能会闪烁或重启，请务必保持 USB 连接稳定。</p>
+<h4 id="救砖"><a href="#救砖" class="headerlink" title="救砖"></a>救砖</h4><p>如果你在操作过程中不幸失误，导致kindle变砖，或者说你刷一半不想继续了，请仔细阅读以下内容：</p>
+<ul>
+<li>如果kindle能被识别：将固件放到kindle根目录，按住电源40s重启kindle。</li>
+<li>如果kindle不能被识别：在电脑上创建一个名为 <code>DO_FACTORY_RESTORE</code> 的<strong>空文件</strong>（注意，要确保文件名完全正确，且没有<code>.txt</code>等多余的后缀），在kindle重启之后会有一段窗口期是能连接上电脑的，通过手速或者脚本将这个文件拷贝到kindle的根目录，然后按住电源40s重启kindle，之后的操作就和能被识别的情况相同了。</li>
+</ul>
+<hr>
+<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://bookfere.com/post/1075.html">Kindle 通用越狱教程：适用版本小于等于 5.16.2.1.1 固件</a></li>
+<li><a target="_blank" rel="noopener" href="https://linux.do/t/topic/781079">Kindle 越狱，Winterbreak，KOReader，你所需要知道的一切</a></li>
+<li><a target="_blank" rel="noopener" href="https://xdaforums.com/t/guide-installing-android-on-your-aging-kindle-e-reader.4450117/">(guide)Installing android on your (aging) kindle e-reader</a></li>
+<li><a target="_blank" rel="noopener" href="https://sspai.com/post/40697">发挥 Kindle 全部潜能，满足你的个性化需求：Kindle 越狱指南</a></li>
+</ul>
+<h3 id="相关资源下载"><a href="#相关资源下载" class="headerlink" title="相关资源下载"></a>相关资源下载</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://1drv.ms/u/c/ea5df632d76db8d3/EeLaRahvqyBCkbztVz0xiSYBu8NzQWTzmulLRArAEiiRuQ?e=cK0U0F">kpw3相关文件（onedrive连接）</a></li>
+<li><a target="_blank" rel="noopener" href="https://xdaforums.com/t/guide-installing-android-on-your-aging-kindle-e-reader.4450117/">(guide)Installing android on your (aging) kindle e-reader</a> - 这个论坛下载东西真的比较慢</li>
+<li><a target="_blank" rel="noopener" href="https://www.amazon.com/gp/help/customer/display.html?nodeId=GKMQC26VQQMM8XSW">官方固件</a></li>
+<li><a target="_blank" rel="noopener" href="https://bookfere.com/update">书伴维护的固件</a></li>
+<li><a target="_blank" rel="noopener" href="https://drive.google.com/file/d/14zgKaRCc8yH_ZCS60EDN7BNI8Pf2qieg/view?usp=sharing">可用软件（google drive）（安卓4.4的常用阅读及工具软件）</a></li>
+</ul>
+
+  </div>
+</article>
+
+
+    <div class="blog-post-comments">
+        <div id="utterances_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
+        </div>
+    </div>
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">首页</a></li>
+        
+          <li><a href="/search/">搜索</a></li>
+        
+          <li><a href="/archives/">归档</a></li>
+        
+          <li><a href="/tags/">标签</a></li>
+        
+          <li><a href="/categories/">分类</a></li>
+        
+          <li><a target="_blank" rel="noopener" href="http://github.com/bijhla">项目</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90"><span class="toc-number">1.</span> <span class="toc-text">Kindle刷安卓相关教程及资源</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C"><span class="toc-number">1.1.</span> <span class="toc-text">使用体验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B"><span class="toc-number">1.2.</span> <span class="toc-text">安装教程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B6%8A%E7%8B%B1"><span class="toc-number">1.2.1.</span> <span class="toc-text">越狱</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%B7%E6%9C%BA"><span class="toc-number">1.2.2.</span> <span class="toc-text">刷机</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%89%E8%A3%85fastboot"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">安装fastboot</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B0%86%E9%A9%B1%E5%8A%A8%E6%96%87%E4%BB%B6%E6%8B%B7%E8%B4%9D%E5%88%B0kindle"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">将驱动文件拷贝到kindle</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%AE%89%E5%8D%93"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">安装安卓</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%91%E7%A0%96"><span class="toc-number">1.2.3.</span> <span class="toc-text">救砖</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="toc-number">1.3.</span> <span class="toc-text">参考文献</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E8%B5%84%E6%BA%90%E4%B8%8B%E8%BD%BD"><span class="toc-number">1.4.</span> <span class="toc-text">相关资源下载</span></a></li></ol></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://bijhla.github.io/2025/07/14/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://bijhla.github.io/2025/07/14/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/&text=垃圾NAS"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://bijhla.github.io/2025/07/14/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/&title=垃圾NAS"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://bijhla.github.io/2025/07/14/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/&is_video=false&description=垃圾NAS"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=垃圾NAS&body=Check out this article: http://bijhla.github.io/2025/07/14/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://bijhla.github.io/2025/07/14/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/&title=垃圾NAS"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://bijhla.github.io/2025/07/14/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/&title=垃圾NAS"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://bijhla.github.io/2025/07/14/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/&title=垃圾NAS"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://bijhla.github.io/2025/07/14/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/&title=垃圾NAS"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://bijhla.github.io/2025/07/14/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/&name=垃圾NAS&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://bijhla.github.io/2025/07/14/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/Kindle%E5%88%B7%E5%AE%89%E5%8D%93%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E5%8F%8A%E8%B5%84%E6%BA%90/&t=垃圾NAS"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2025
+    bijhla
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/search/">搜索</a></li><!--
+     --><!--
+       --><li><a href="/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/tags/">标签</a></li><!--
+     --><!--
+       --><li><a href="/categories/">分类</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/bijhla">项目</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+    <script type="text/javascript">
+      var utterances_repo = 'bijhla/utterances';
+      var utterances_issue_term = 'pathname';
+      var utterances_label = 'Comment';
+      var utterances_theme = 'github-dark';
+
+      (function(){
+          var script = document.createElement('script');
+
+          script.src = 'https://utteranc.es/client.js';
+          script.setAttribute('repo', utterances_repo);
+          script.setAttribute('issue-term', 'pathname');
+          script.setAttribute('label', utterances_label);
+          script.setAttribute('theme', utterances_theme);
+          script.setAttribute('crossorigin', 'anonymous');
+          script.async = true;
+          (document.getElementById('utterances_thread')).appendChild(script);
+      }());
+  </script>
+
+</body>
+</html>
